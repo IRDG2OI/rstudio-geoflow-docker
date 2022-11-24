@@ -1,0 +1,12 @@
+version: '3.3'
+services:
+    rstudio:
+        container_name: rstudio
+        image: 'g2oi/rstudio-geoflow:4.2.2'
+        ports:
+            - 8787:8787
+        environment:
+            - PASSWORD=${RSTUDIO_PASSWORD}
+        volumes:
+            # PERSISTANT DATA
+            - $PWD/rstudio_data/home:/home
