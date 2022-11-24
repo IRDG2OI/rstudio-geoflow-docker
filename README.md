@@ -33,4 +33,4 @@ Launch your web browser and go to `http://<ipadress>:8787`
 
 ## Adding new users :
 
-Docuementation to be done
+Documentation to be done
