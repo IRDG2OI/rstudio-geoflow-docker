@@ -34,3 +34,35 @@ Launch your web browser and go to `http://<ipadress>:8787`
 ## Adding new users :
 
 Documentation to be done
+
+
+## Removing or adjusting RStudio server
+
+Add or adjust rserver.conf as a volume in your docker container. 
+Default configuration in this repository will not force you to sign-in again and you will stay sign-in for 30 days
+
+```
+$ cat rserver.conf
+rsession-which-r=/usr/local/bin/R
+# use legacy auth behavior
+auth-timeout-minutes=0
+auth-stay-signed-in-days=30
+```
+Source: [Stay sign-in has no effect](https://github.com/rstudio/rstudio/issues/5449#issuecomment-637586731)
+
+
+For docker run, add:
+```
+-v $PWD/rserver.conf:/etc/rstudio/rserver.conf
+```
+
+Or if you use docker-compose in `volume` section:
+```
+        - $PWD/rserver.conf:/etc/rstudio/rserver.conf
+```
+
+
+# LDAP, SSO:
+
+[Authenticating users](https://docs.posit.co/ide/server-pro/authenticating_users/authenticating_users.html)
+
