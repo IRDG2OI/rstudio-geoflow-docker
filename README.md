@@ -36,7 +36,7 @@ Launch your web browser and go to `http://<ipadress>:8787`
 Documentation to be done
 
 
-## Removing or adjusting RStudio server
+## Removing auto deauth after 60 min idle or adjusting RStudio server persistent sign-in
 
 Add or adjust rserver.conf as a volume in your docker container. 
 Default configuration in this repository will not force you to sign-in again and you will stay sign-in for 30 days
@@ -62,7 +62,7 @@ Or if you use docker-compose in `volume` section:
 ```
 
 
-# LDAP, SSO:
+## LDAP, SSO:
 
 [Authenticating users](https://docs.posit.co/ide/server-pro/authenticating_users/authenticating_users.html)
 
