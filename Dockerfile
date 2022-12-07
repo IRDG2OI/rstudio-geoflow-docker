@@ -1,11 +1,11 @@
-FROM rocker/geospatial:4.2.2-ubuntugis
+FROM rocker/geospatial:4.2.2
 
 ENV DEBIAN_FRONTEND=noninteractive
 
-RUN apt-get update && apt-get -y install libsecret-1-0 grass
+RUN apt-get update && apt-get -y install libsecret-1-0 python pip git nano
+RUN pip install --index-url https://${fiftyonekey}@pypi.fiftyone.ai fiftyone
 
 RUN install2.r --error --skipmissing --skipinstalled -n 40 \
-    rgrass \
     gsheets \
     geometa \
     geonapi \
